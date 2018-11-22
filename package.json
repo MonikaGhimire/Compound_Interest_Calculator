@@ -1,0 +1,20 @@
+{
+  "name": "npmtest",
+  "version": "1.0.0",
+  "description": "npm test project",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "css": "sass --watch sass/main.scss dist/style.css"
+  },
+  "author": "Monika",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "lodash": "^4.17.11",
+    "sass": "^1.14.3",
+    "webpack": "^4.25.1"
+  }
+}
