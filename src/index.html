@@ -22,23 +22,20 @@
     </select><br />
 
     <label for="pamt" class="input-label">Principal Amount:</label>
-    <input type="text" name="pamt" onkeyup="validatePrincipalAmount()" onchange="validatePrincipalAmount()" onblur="validatePrincipalAmount()"
-      id="principal-amount" />
+    <input type="text" name="pamt" id="principal-amount" />
     <label id="principal-amount-required" class="input-validation-error-hidden">Principal amount required</label><label
       id="principal-amount-invalid" class="input-validation-error-hidden">Invalid input</label>
     <br />
 
     <label for="rate" class="input-label">Annual Interest Rate:</label>
-    <input type="text" name="rate" id="interest-rate" onkeyup="validateAnnualInterest()" onchange="validateAnnualInterest()"
-      onblur="validateAnnualInterest()" />
+    <input type="text" name="rate" id="interest-rate" />
     <label class="interest-rate">%</label>
     <label id="annual-interest-rate-required" class="input-validation-error-hidden">Annual interest rate required</label><label
       id="annual-interest-rate-invalid" class="input-validation-error-hidden">Invalid input</label>
     <br />
 
     <label for="time" class="input-label">Calculation Period:</label>
-    <input type="text" name="time" id="calculation-period" onkeyup="validateCalculationPeriod()" onchange="validateCalculationPeriod()"
-      onblur="validateCalculationPeriod()" />
+    <input type="text" name="time" id="calculation-period" />
     <select id="ddl">
       <option value="year">Years</option>
     </select>
@@ -48,8 +45,7 @@
 
     <label for="interval" class="input-label">
       Compound Times Per Year:</label>
-    <input type="text" name="interval" id="interval" onkeyup="validateCompoundTimes()" onchange="validateCompoundTimes()"
-      onblur="validateCompoundTimes()" />
+    <input type="text" name="interval" id="interval" />
     <label id="compound-times-required" class="input-validation-error-hidden">Compound times per year required</label><label
       id="compound-times-invalid" class="input-validation-error-hidden">Invalid input</label>
     <br />

@@ -1,7 +1,5 @@
 import '../styles/index.scss';
 
-const myVariable = 100;
-
 let button = document.getElementById("calculate");
 button.onclick = () => {
   let values = readValuesFromUi();
@@ -67,28 +65,53 @@ let validationResultInfo = {
   isCompoundTimesValid: false
 };
 
+let principalAmountInputElement = document.getElementById("principal-amount");
+principalAmountInputElement.onkeyup = () => {
+  validatePrincipalAmount();
+};
+
+principalAmountInputElement.onchange= () => {
+  validatePrincipalAmount();
+};
+
+principalAmountInputElement.onblur= () => {
+  validatePrincipalAmount();
+};
+
 const validatePrincipalAmount = () => {
   validationResultInfo.isPrincipalAmountValid = true;
   clearValidationError("principal-amount-required");
   clearValidationError("principal-amount-invalid");
-  let p = document.getElementById("principal-amount").value;
-  if (p == "") {
+  const principalAmount = principalAmountInputElement.value;
+  if (principalAmount == "") {
     validationResultInfo.isPrincipalAmountValid = false;
     setValidationError("principal-amount-required");
   }
 
-  if (isNaN(p) || (p < 0 && !isFinite(p))) {
+  if (isNaN(principalAmount) || (principalAmount < 0 && !isFinite(p))) {
     validationResultInfo.isPrincipalAmountValid = false;
     setValidationError("principal-amount-invalid");
   }
   setButtonStateIfNeeded();
 };
 
+let annualInterestRateInputElement = document.getElementById("interest-rate");
+annualInterestRateInputElement.onkeyup = () => {
+  validateAnnualInterest();
+};
+
+annualInterestRateInputElement.onchange= () => {
+  validateAnnualInterest();
+};
+
+annualInterestRateInputElement.onblur= () => {
+  validateAnnualInterest();
+};
 const validateAnnualInterest = () => {
   validationResultInfo.isAnnualInterestValid = true;
   clearValidationError("annual-interest-rate-required");
   clearValidationError("annual-interest-rate-invalid");
-  let r = document.getElementById("interest-rate").value;
+  let r = annualInterestRateInputElement.value;
   if (r == "") {
     validationResultInfo.isAnnualInterestValid = false;
     setValidationError("annual-interest-rate-required");
@@ -100,32 +123,56 @@ const validateAnnualInterest = () => {
   setButtonStateIfNeeded();
 };
 
+let calculationPeriodInputElement = document.getElementById("calculation-period");
+calculationPeriodInputElement.onkeyup = () => {
+  validateCalculationPeriod();
+};
+
+calculationPeriodInputElement.onchange= () => {
+  validateCalculationPeriod();
+};
+
+calculationPeriodInputElement.onblur= () => {
+  validateCalculationPeriod();
+};
 const validateCalculationPeriod = () => {
   validationResultInfo.isCalculationPeriodValid = true;
   clearValidationError("calculation-period-required");
   clearValidationError("calculation-period-invalid");
-  let t = document.getElementById("calculation-period").value;
-  if (t == "") {
+  let calculationPeriod = calculationPeriodInputElement.value;
+  if (calculationPeriod == "") {
     validationResultInfo.isCalculationPeriodValid = false;
     setValidationError("calculation-period-required");
   }
-  if (isNaN(t) || t < 0) {
+  if (isNaN(calculationPeriod) || calculationPeriod < 0) {
     validationResultInfo.isCalculationPeriodValid = false;
     setValidationError("calculation-period-invalid");
   }
   setButtonStateIfNeeded();
 };
 
+let compoundTimesPerYearInputElement = document.getElementById("interval");
+compoundTimesPerYearInputElement.onkeyup = () => {
+  validateCompoundTimes();
+};
+
+compoundTimesPerYearInputElement.onchange= () => {
+  validateCompoundTimes();
+};
+
+compoundTimesPerYearInputElement.onblur= () => {
+  validateCompoundTimes();
+};
 const validateCompoundTimes = () => {
   validationResultInfo.isCompoundTimesValid = true;
   clearValidationError("compound-times-required");
   clearValidationError("compound-times-invalid");
-  let c = document.getElementById("interval").value;
-  if (c == "") {
+  let compoundTimes = compoundTimesPerYearInputElement.value;
+  if (compoundTimes == "") {
     validationResultInfo.isCompoundTimesValid = false;
     setValidationError("compound-times-required");
   }
-  if (isNaN(c) || c < 0) {
+  if (isNaN(compoundTimes) || compoundTimes < 0) {
     validationResultInfo.isCompoundTimesValid = false;
     setValidationError("compound-times-invalid");
   }
